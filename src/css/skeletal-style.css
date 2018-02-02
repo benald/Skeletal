@@ -459,3 +459,35 @@ fieldset[disabled] .btn-info.active {
 .logo {
 	max-width:100%;
 }
+.tabbable .tab-content > .tab-pane {
+	display: block;
+}
+.tabbable h4.panel-title a {
+	display: block;
+}
+.tabbable .panel-default {
+	margin-bottom: 0;
+	box-shadow: none;
+}
+.tabbable > .nav-tabs {
+	width: 100%;
+	display: none;
+}
+@media (min-width : 992px) {
+	.tabbable > .nav-tabs {
+		display: block;
+	}
+	.tabbable .tab-pane.active .collapse {
+		display: block;
+		height: auto !important;
+	}
+	.tabbable .panel {
+		border: 0;
+	}
+	.tabbable .panel-heading {
+		display: none;
+	}
+	.tabbable .panel-body {
+		padding: 0;
+	}
+}

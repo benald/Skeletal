@@ -204,240 +204,302 @@
 			</div>
 			[%/param%]
 			[%/free_gifts%]
-			<div class="tabbable">
+			<div class="tabbable accordion-tabs">
 				<ul class="nav nav-tabs">
 					<li class="active">
-						<a href="#description" data-toggle="tab">Description</a>
+						<a href="#description-tab" data-toggle="tab">Description</a>
 					</li>
 					[%if [@warranty@]%]
 						<li>
-							<a href="#warranty" data-toggle="tab">Warranty</a>
+							<a href="#warranty-tab" data-toggle="tab">Warranty</a>
 						</li>
 					[%/if%]
 					[%if [@features@]%]
 						<li>
-							<a href="#features" data-toggle="tab">Features</a>
+							<a href="#features-tab" data-toggle="tab">Features</a>
 						</li>
 					[%/if%]
 					<li>
-						<a href="#specifications" data-toggle="tab">Specifications</a>
+						<a href="#specs-tab" data-toggle="tab">Specifications</a>
 					</li>
 					[%if [@tnc@]%]
 						<li>
-							<a href="#terms" data-toggle="tab">Terms and Conditions</a>
+							<a href="#terms-tab" data-toggle="tab">Terms and Conditions</a>
 						</li>
 					[%/if%]
 					[%if [@config:show_product_reviews@]%]
-					<li>
-						<a class="reviews" href="#reviews" data-toggle="tab">
-							Reviews
-							[%set [@data:ratings-count@] = 1 /%]
-							[%while [@data:ratings-count@] <= [@data:rating@]%]
-								[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-								<i class="fa fa-star" aria-hidden="true"></i>
-							[%/while%]
-							[%while [@data:ratings-count@] <= 5%]
-								[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-								<i class="fa fa-star-o" aria-hidden="true"></i>
-							[%/while%]
-						</a>
-					</li>
-					[%/if%]
-				</ul>
-				<div class="tab-content">
-					<div class="tab-pane active" id="description">
-						<section class="productdetails n-responsive-content" aria-label="Product Description">
-							[@description@]
-						</section>
-						<p class="small">
-							(<span itemprop="productID">[@SKU@]</span>)
-						</p>
-					</div>
-					[%if [@features@]%]
-						<div class="tab-pane" id="features">
-							<div class="n-responsive-content">
-								[@features@]
-							</div>
-						</div>
-					[%/if%]
-					[%if [@tnc@]%]
-						<div class="tab-pane" id="terms">
-							<div class="n-responsive-content">
-								[@tnc@]
-							</div>
-						</div>
-					[%/if%]
-					<div class="tab-pane" id="specifications">
-						[%if [@specifications@]%]
-							<div class="n-responsive-content">
-								[@specifications@]
-							</div>
-						[%/if%]
-						<table class="table">
-							<tbody>
-								<tr>
-									<td><strong>SKU</strong></td>
-									<td>[@SKU@]</td>
-								</tr>
-								[%if [@manufacturer_model@]%]
-								<tr>
-									<td><strong>Model #</strong></td>
-									<td>[@manufacturer_model@]</td>
-								</tr>
-								[%/if%]
-								[%if [@barcode@]%]
-								<tr>
-									<td><strong>Barcode #</strong></td>
-									<td>[@barcode@]</td>
-								</tr>
-								[%/if%]
-								[%if [@brand@]%]
-								<tr>
-									<td><strong>Brand</strong></td>
-									<td>[@brand@]</td>
-								</tr>
-								[%/if%]
-								[%if [@artist_author@]%]
-								<tr>
-									<td><strong>Artist / Author</strong></td>
-									<td>[@artist_author@]</td>
-								</tr>
-								[%/if%]
-								[%if [@weight@] > '0'%]
-								<tr>
-									<td><strong>Shipping Weight</strong></td>
-									<td>[@weight@]kg</td>
-								</tr>
-								[%/if%]
-								[%if [@width@] > '0'%]
-								<tr>
-									<td><strong>Shipping Width</strong></td>
-									<td>[@width@]m</td>
-								</tr>
-								[%/if%]
-								[%if [@height@] > '0'%]
-								<tr>
-									<td><strong>Shipping Height</strong></td>
-									<td>[@height@]m</td>
-								</tr>
-								[%/if%]
-								[%if [@length@] > '0'%]
-								<tr>
-									<td><strong>Shipping Length</strong></td>
-									<td>[@length@]m</td>
-								</tr>
-								[%/if%]
-								[%if [@cubic@] > '0'%]
-								<tr>
-									<td><strong>Shipping Cubic</strong></td>
-									<td>[@cubic@]m3</td>
-								</tr>
-								[%/if%]
-								[%if [@unit@]%]
-								<tr>
-									<td><strong>Unit Of Measure</strong></td>
-									<td>[@unit@]</td>
-								</tr>
-								[%/if%]
-								[%if [@actual_length@] > '0'%]
-								<tr>
-									<td><strong>Assembled Length</strong></td>
-									<td>[@actual_length@]m</td>
-								</tr>
-								[%/if%]
-								[%if [@actual_height@] > '0'%]
-								<tr>
-									<td><strong>Assembled Height</strong></td>
-									<td>[@actual_height@]m</td>
-								</tr>
-								[%/if%]
-								[%if [@actual_width@] > '0'%]
-								<tr>
-									<td><strong>Assembled Width</strong></td>
-									<td>[@actual_width@]m</td>
-								</tr>
-								[%/if%]
-								[%if [@product_type@]%]
-								<tr>
-									<td><strong>Type</strong></td>
-									<td>[@product_type@]</td>
-								</tr>
-								[%/if%]
-								[%if [@format@]%]
-								<tr>
-									<td><strong>Format</strong></td>
-									<td>[@format@]</td>
-								</tr>
-								[%/if%]
-							</tbody>
-						</table>
-					</div>
-					[%if [@warranty@]%]
-						<div class="tab-pane" id="warranty">
-							<div class="n-responsive-content">
-								[@warranty@]
-							</div>
-						</div>
-					[%/if%]
-					[%if [@config:show_product_reviews@]%]
-					<div class="tab-pane" id="reviews">
-					[%thumb_list type:'product_reviews' limit:'5'%]
-						[%param filter_1%][@SKU@][%/param%]
-						[%param *body%]
-						<div itemprop="review" itemscope itemtype="http://schema.org/Review">
-							<meta itemprop="itemReviewed" content="[@name@]">
-							<meta itemprop="image" content="[%asset_url type:'product' thumb:'thumb' id:'[@SKU@]'%][%param default%][%cdn_asset html:'0' library:'images'%]default_product.gif[%/cdn_asset%][%end param%][%/asset_url%]">
-							<blockquote>
-								<h4 itemprop="name">[%nohtml%][@title@][%/nohtml%]</h4>
-								<div>
-									<strong>
-										[%if [@reviewname@]%]
-											By: <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">[@reviewname@]</span></span> on 
-										[%/if%]
-										<meta itemprop="datePublished" content="[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]">[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]
-									</strong>
-								</div>
-								<span itemprop="description">[%nohtml%][@review@][%/nohtml%]</span><br />
-								<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
-									<meta itemprop="worstRating" content = "1">
-									<meta itemprop="ratingValue" content = "[@score@]">
-									<meta itemprop="bestRating" content = "5">
-								</div>
+						<li>
+							<a class="reviews" href="#reviews-tab" data-toggle="tab">
+								Reviews
 								[%set [@data:ratings-count@] = 1 /%]
-								[%while [@data:ratings-count@] <= [@data:score@]%]
+								[%while [@data:ratings-count@] <= [@data:rating@]%]
 									[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-									<i class="fa fa-star"></i>
+									<i class="fa fa-star" aria-hidden="true"></i>
 								[%/while%]
 								[%while [@data:ratings-count@] <= 5%]
 									[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
-									<i class="fa fa-star-o"></i>
+									<i class="fa fa-star-o" aria-hidden="true"></i>
 								[%/while%]
-								([@score@])
-								[%if [@review_response@]%]
-									<br /><br />
-									<blockquote>
-										<span class="review_response text-muted"><strong><i>[@config:website_name@] Response</i></strong><br /> [%nohtml%][@review_response@][%/nohtml%]</span>
-									</blockquote>
-								[%/if%]
-							</blockquote>
+							</a>
+						</li>
+					[%/if%]
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane active" id="description-tab">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent=".tab-pane" href="#description-collapse">
+										Description
+									</a>
+								</h4>
+							</div>
+							<div id="description-collapse" class="panel-collapse collapse">
+								<div class="panel-body">
+									<section class="productdetails n-responsive-content" aria-label="Product Description">
+										[@description@]
+									</section>
+									<p class="small">
+										(<span itemprop="productID">[@SKU@]</span>)
+									</p>
+								</div>
+							</div>
 						</div>
-						[%/param%]
-						[%param *ifempty%]
-						[%/param%]
-					[%/thumb_list%]
-					[%if [@reviews@] > 0%]
-						<p>
-							<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]" class="btn btn-default"><i class="fa fa-pencil-square-o"></i> Write a product review</a>
-						</p>
-					[%else%]
-						<h4>Be The First To Review This Product!</h4>
-						<p>Help other [@config:company_name@] users shop smarter by writing reviews for products you have purchased.</p>
-						<p><a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]" class="btn btn-default"><i class="fa fa-pencil-square-o"></i> Write a product review</a></p>
+					</div>
+					<div class="tab-pane" id="specs-tab">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent=".tab-pane" href="#specs-collapse">
+										Specifications
+									</a>
+								</h4>
+							</div>
+							<div id="specs-collapse" class="panel-collapse collapse">
+								<div class="panel-body n-responsive-content">
+									[%if [@specifications@]%]
+										[@specifications@]
+									[%/if%]
+									<table class="table">
+										<tbody>
+											<tr>
+												<td><strong>SKU</strong></td>
+												<td>[@SKU@]</td>
+											</tr>
+											[%if [@manufacturer_model@]%]
+											<tr>
+												<td><strong>Model #</strong></td>
+												<td>[@manufacturer_model@]</td>
+											</tr>
+											[%/if%]
+											[%if [@barcode@]%]
+											<tr>
+												<td><strong>Barcode #</strong></td>
+												<td>[@barcode@]</td>
+											</tr>
+											[%/if%]
+											[%if [@brand@]%]
+											<tr>
+												<td><strong>Brand</strong></td>
+												<td>[@brand@]</td>
+											</tr>
+											[%/if%]
+											[%if [@artist_author@]%]
+											<tr>
+												<td><strong>Artist / Author</strong></td>
+												<td>[@artist_author@]</td>
+											</tr>
+											[%/if%]
+											[%if [@weight@] > '0'%]
+											<tr>
+												<td><strong>Shipping Weight</strong></td>
+												<td>[@weight@]kg</td>
+											</tr>
+											[%/if%]
+											[%if [@width@] > '0'%]
+											<tr>
+												<td><strong>Shipping Width</strong></td>
+												<td>[@width@]m</td>
+											</tr>
+											[%/if%]
+											[%if [@height@] > '0'%]
+											<tr>
+												<td><strong>Shipping Height</strong></td>
+												<td>[@height@]m</td>
+											</tr>
+											[%/if%]
+											[%if [@length@] > '0'%]
+											<tr>
+												<td><strong>Shipping Length</strong></td>
+												<td>[@length@]m</td>
+											</tr>
+											[%/if%]
+											[%if [@cubic@] > '0'%]
+											<tr>
+												<td><strong>Shipping Cubic</strong></td>
+												<td>[@cubic@]m3</td>
+											</tr>
+											[%/if%]
+											[%if [@unit@]%]
+											<tr>
+												<td><strong>Unit Of Measure</strong></td>
+												<td>[@unit@]</td>
+											</tr>
+											[%/if%]
+											[%if [@actual_length@] > '0'%]
+											<tr>
+												<td><strong>Assembled Length</strong></td>
+												<td>[@actual_length@]m</td>
+											</tr>
+											[%/if%]
+											[%if [@actual_height@] > '0'%]
+											<tr>
+												<td><strong>Assembled Height</strong></td>
+												<td>[@actual_height@]m</td>
+											</tr>
+											[%/if%]
+											[%if [@actual_width@] > '0'%]
+											<tr>
+												<td><strong>Assembled Width</strong></td>
+												<td>[@actual_width@]m</td>
+											</tr>
+											[%/if%]
+											[%if [@product_type@]%]
+											<tr>
+												<td><strong>Type</strong></td>
+												<td>[@product_type@]</td>
+											</tr>
+											[%/if%]
+											[%if [@format@]%]
+											<tr>
+												<td><strong>Format</strong></td>
+												<td>[@format@]</td>
+											</tr>
+											[%/if%]
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+					[%if [@config:show_product_reviews@]%]
+						<div class="tab-pane" id="reviews-tab">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent=".tab-pane" href="#reviews-collapse">
+											Reviews
+										</a>
+									</h4>
+								</div>
+								<div id="reviews-collapse" class="panel-collapse collapse">
+									<div class="panel-body">
+										[%thumb_list type:'product_reviews' limit:'5'%]
+											[%param filter_1%][@SKU@][%/param%]
+											[%param *body%]
+												<div itemprop="review" itemscope itemtype="http://schema.org/Review">
+													<meta itemprop="itemReviewed" content="[@name@]">
+													<blockquote>
+														<h4 itemprop="name">[%nohtml%][@title@][%/nohtml%]</h4>
+														<div>
+															<strong>[%if [@reviewname@]%]By: <span itemprop="author">[@reviewname@]</span> on [%/if%]<meta itemprop="datePublished" content="[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]">[%FORMAT type:'date'%][@insert_date@][%/FORMAT%]</strong>
+														</div>
+														<span itemprop="description">[%nohtml%][@review@][%/nohtml%]</span><br />
+														<div itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+															<meta itemprop="worstRating" content = "1">
+															<meta itemprop="ratingValue" content = "[@score@]">
+															<meta itemprop="bestRating" content = "5">
+														</div>
+														[%set [@data:ratings-count@] = 1 /%]
+														[%while [@data:ratings-count@] <= [@data:score@]%]
+															[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+															<i class="fa fa-star"></i>
+														[%/while%]
+														[%while [@data:ratings-count@] <= 5%]
+															[%set [@data:ratings-count@] = [@data:ratings-count@]+1 /%]
+															<i class="fa fa-star-o"></i>
+														[%/while%]
+														([@score@])
+														[%if [@review_response@]%]
+															<br /><br />
+															<blockquote>
+																<span class="review_response text-muted"><strong><i>[@config:website_name@] Response</i></strong><br /> [%nohtml%][@review_response@][%/nohtml%]</span>
+															</blockquote>
+														[%/if%]
+													</blockquote>
+												</div>
+											[%/param%]
+										[%/thumb_list%]
+										[%if [@reviews@] > 0%]
+											<p>
+												<a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]" class="btn btn-default"><i class="fa fa-pencil-square-o"></i> Write a product review</a>
+											</p>
+										[%else%]
+											<h4>Be The First To Review This Product!</h4>
+											<p>Help other [@config:company_name@] users shop smarter by writing reviews for products you have purchased.</p>
+											<p><a href="[%URL page:'account' type:'write_review' qs:'item=[@SKU@]'%][%/URL%]" class="btn btn-default"><i class="fa fa-pencil-square-o"></i> Write a product review</a></p>
+										[%/if%]
+									</div>
+								</div>
+							</div>
+						</div>
 					[%/if%]
-					</div><!--/.tab-pane-->
+					[%if [@warranty@]%]
+						<div class="tab-pane" id="warranty-tab">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent=".tab-pane" href="#warranty-collapse">
+											Warranty
+										</a>
+									</h4>
+								</div>
+								<div id="warranty-collapse" class="panel-collapse collapse">
+									<div class="panel-body n-responsive-content">
+										[@warranty@]
+									</div>
+								</div>
+							</div>
+						</div>
 					[%/if%]
-				</div><!--/.tab-content-->
-			</div><!--/.tabbable-->
+					[%if [@features@]%]
+						<div class="tab-pane" id="features-tab">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent=".tab-pane" href="#features-collapse">
+											Features
+										</a>
+									</h4>
+								</div>
+								<div id="features-collapse" class="panel-collapse collapse">
+									<div class="panel-body n-responsive-content">
+										[@features@]
+									</div>
+								</div>
+							</div>
+						</div>
+					[%/if%]
+					[%if [@tnc@]%]
+						<div class="tab-pane" id="terms-tab">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title">
+										<a data-toggle="collapse" data-parent=".tab-pane" href="#terms-collapse">
+											Terms & Conditions
+										</a>
+									</h4>
+								</div>
+								<div id="terms-collapse" class="panel-collapse collapse">
+									<div class="panel-body n-responsive-content">
+										[@tnc@]
+									</div>
+								</div>
+							</div>
+						</div>
+					[%/if%]
+				</div>
+			</div>
 			[%if [@form:disable_scripts@] ne 'true'%]
 			[%tracking_code type:'ProductDescription' /%]
 			[%/if%]
